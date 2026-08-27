@@ -8,6 +8,8 @@ TEMPLATE_FILE = Path("tvbox.json")
 OUTPUT_DIR = Path("output")
 OUTPUT_FILE = OUTPUT_DIR / "tvbox.json"
 
+GH_PROXY = "https://ghfast.top"
+
 def generate():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     
@@ -19,11 +21,13 @@ def generate():
     (OUTPUT_DIR / "movies.json").write_text(
         json.dumps(movies, ensure_ascii=False, indent=2), encoding="utf-8")
     
+    movies_url = f"{GH_PROXY}/raw.githubusercontent.com/yangclaw2026-png/my-tvbox/main/output/movies.json"
+    
     config["sites"] = [{
         "key": "my_library",
         "name": "我的影视库",
         "type": 4,
-        "api": "https://raw.githubusercontent.com/yangclaw2026-png/my-tvbox/main/output/movies.json",
+        "api": movies_url,
         "searchable": 1,
         "quickSearch": 1,
         "filterable": 1
