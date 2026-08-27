@@ -5,7 +5,7 @@
       "key": "my_library",
       "name": "我的影视库",
       "type": 4,
-      "api": "https://raw.githubusercontent.com/yangclaw2026-png/my-tvbox/main/output/movies.json",
+      "api": "https://ghfast.top/raw.githubusercontent.com/yangclaw2026-png/my-tvbox/main/output/movies.json",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1
@@ -40,6 +40,6 @@
       "url": "https://dns.alidns.com/dns-query"
     }
   ],
-  "_lastUpdate": "2026-08-27T05:39:36.387998",
-  "_totalMovies": 395
+  "_lastUpdate": "2026-08-27T05:54:36.133857",
+  "_totalMovies": 415
 }
