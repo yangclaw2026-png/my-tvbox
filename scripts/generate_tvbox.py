@@ -5,15 +5,18 @@ from datetime import datetime
 
 MOVIES_FILE = Path("data/movies_rated.json")
 TEMPLATE_FILE = Path("tvbox.json")
-OUTPUT_FILE = Path("output/tvbox.json")
+OUTPUT_DIR = Path("output")
+OUTPUT_FILE = OUTPUT_DIR / "tvbox.json"
 
 def generate():
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    
     movies = json.loads(MOVIES_FILE.read_text(encoding="utf-8"))
     config = json.loads(TEMPLATE_FILE.read_text(encoding="utf-8"))
     
     movies.sort(key=lambda x: float(x.get("rating") or 0), reverse=True)
     
-    Path("output/movies.json").write_text(
+    (OUTPUT_DIR / "movies.json").write_text(
         json.dumps(movies, ensure_ascii=False, indent=2), encoding="utf-8")
     
     config["sites"] = [{
