@@ -10,6 +10,8 @@ OUTPUT_FILE = OUTPUT_DIR / "tvbox.json"
 
 GH_PROXY = "https://ghfast.top"
 
+SPIDER_URL = f"{GH_PROXY}/https://raw.githubusercontent.com/fish2018/tvbox/master/jar/json无敌.jar"
+
 def generate():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     
@@ -23,6 +25,7 @@ def generate():
     
     movies_url = f"{GH_PROXY}/raw.githubusercontent.com/yangclaw2026-png/my-tvbox/main/output/movies.json"
     
+    config["spider"] = SPIDER_URL
     config["sites"] = [{
         "key": "my_library",
         "name": "我的影视库",
