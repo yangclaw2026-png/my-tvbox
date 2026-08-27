@@ -1,5 +1,5 @@
 {
-  "spider": "",
+  "spider": "https://ghfast.top/https://raw.githubusercontent.com/fish2018/tvbox/master/jar/json无敌.jar",
   "sites": [
     {
       "key": "my_library",
@@ -40,6 +40,6 @@
       "url": "https://dns.alidns.com/dns-query"
     }
   ],
-  "_lastUpdate": "2026-08-27T05:54:36.133857",
-  "_totalMovies": 415
+  "_lastUpdate": "2026-08-27T06:01:48.836354",
+  "_totalMovies": 416
 }
