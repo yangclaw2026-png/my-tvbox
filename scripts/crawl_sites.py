@@ -51,7 +51,9 @@ def normalize(movie, source):
         "vod_remarks": movie.get("vod_remarks", ""),
         "vod_pic": movie.get("vod_pic", ""),
         "vod_class": movie.get("vod_class", ""),
-        "vod_content": movie.get("vod_content", "")[:200],
+        "vod_content": movie.get("vod_content", "")[:500],
+        "vod_play_url": movie.get("vod_play_url", ""),
+        "vod_play_from": movie.get("vod_play_from", ""),
         "source": source
     }
 
