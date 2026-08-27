@@ -8,10 +8,8 @@ TEMPLATE_FILE = Path("tvbox.json")
 OUTPUT_DIR = Path("output")
 OUTPUT_FILE = OUTPUT_DIR / "tvbox.json"
 
-GH_PROXY = "https://ghfast.top"
-CF_BASE = "https://aged-recipe-907d.pages.dev"
-
-SPIDER_URL = f"{GH_PROXY}/https://raw.githubusercontent.com/fish2018/tvbox/master/jar/json无敌.jar"
+GITEE_USER = "angus66669999"
+GITEE_RAW = f"https://gitee.com/{GITEE_USER}/my-tvbox/raw/master"
 
 def generate():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -24,12 +22,12 @@ def generate():
     (OUTPUT_DIR / "movies.json").write_text(
         json.dumps(movies, ensure_ascii=False, indent=2), encoding="utf-8")
     
-    config["spider"] = SPIDER_URL
+    config["spider"] = f"{GITEE_RAW}/spider.jar"
     config["sites"] = [{
         "key": "my_library",
         "name": "我的影视库",
         "type": 4,
-        "api": f"{CF_BASE}/movies.json",
+        "api": f"{GITEE_RAW}/movies.json",
         "searchable": 1,
         "quickSearch": 1,
         "filterable": 1
